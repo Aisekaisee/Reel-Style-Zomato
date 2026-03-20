@@ -19,4 +19,10 @@ router.post(
 /* GET /api/food [protected route]*/
 router.get("/", authMiddleware.authUserMiddleware, foodController.getFoodItems);
 
+/* POST /api/food/like [protected route]*/
+router.post("/like", authMiddleware.authUserMiddleware, foodController.likeFood);
+
+/* GET /api/food/save [protected route]*/
+router.get("/save", authMiddleware.authUserMiddleware, foodController.saveFood);
+
 module.exports = router;
